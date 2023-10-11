@@ -26,5 +26,3 @@ if submitted:
             words = [lemmatizer.lemmatize(word) for word in words]
             final_text = " ".join(words)
             st.write(final_text)
-
-
