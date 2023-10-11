@@ -1,0 +1,4 @@
+nltk
+streamlit
+io
+PyPDF2
