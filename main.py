@@ -4,6 +4,7 @@ from io import BytesIO
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+import pyperclip
 
 st.title("PDF Data Extractor")
 
@@ -26,3 +27,6 @@ if submitted:
             words = [lemmatizer.lemmatize(word) for word in words]
             final_text = " ".join(words)
             st.write(final_text)
+            if st.button("Copy to Clipboard"):
+                pyperclip.copy(final_text)
+                st.write("Text copied to clipboard!")
