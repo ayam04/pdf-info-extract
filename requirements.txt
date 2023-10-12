@@ -2,4 +2,4 @@ nltk
 streamlit
 io
 PyPDF2
-pyperclip
+bardapi

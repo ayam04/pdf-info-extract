@@ -5,6 +5,11 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import pyperclip
+import bardapi
+
+headers = {
+    "authorization": st.secrets("API_KEY")
+}
 
 def extractinfo(uploaded_file):
     file = BytesIO(uploaded_file.read())
@@ -20,3 +25,12 @@ def extractinfo(uploaded_file):
     words = [lemmatizer.lemmatize(word) for word in words]
     final_text = " ".join(words)
     return final_text
+
+def final(text):
+    sp = "Summmarize the following Pdfs for me. Do not write extra unnec=essary information in your output. Be very specific and precise with your response. Here's the ppt for you to summarize: "
+
+    ip=text
+    response = bardapi.generate_text(prompt=f'{sp} + {ip}', headers=headers)
+    return response
+
+
