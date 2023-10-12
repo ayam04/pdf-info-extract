@@ -1,5 +1,6 @@
 import streamlit as st
 from functions import *
+import pyperclip
 
 st.title("PDF Data Extractor")
 
