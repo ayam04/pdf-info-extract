@@ -6,9 +6,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import bardapi
 
-headers = {
-    "authorization": st.secrets("API_KEY")
-}
+api_key=st.secrets['API_KEY']
 
 def extractinfo(uploaded_file):
     file = BytesIO(uploaded_file.read())
@@ -29,7 +27,7 @@ def final(text):
     sp = "Summmarize the following Pdfs for me. Do not write extra unnec=essary information in your output. Be very specific and precise with your response. Here's the ppt for you to summarize: "
 
     ip=text
-    response = bardapi.generate_text(prompt=f'{sp} + {ip}', headers=headers)
+    response = bardapi.generate_text(prompt=f'{sp} + {ip}', headers={"authorization": api_key})
     return response
 
 
