@@ -11,7 +11,7 @@ submitted = st.button("Submit")
 if submitted:
     if uploaded_file is not None:
         a = extractinfo(uploaded_file)
-        b =final(a)
+        b = final(a)
         st.write(b)
         if st.button("Copy to Clipboard"):
             pyperclip.copy()
