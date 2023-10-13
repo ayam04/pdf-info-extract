@@ -1,6 +1,7 @@
 nltk
 streamlit
-io
+requires.io
+Python-IO
 PyPDF2
 bardapi
 pyperclip
