@@ -3,3 +3,4 @@ streamlit
 io
 PyPDF2
 bardapi
+pyperclip
