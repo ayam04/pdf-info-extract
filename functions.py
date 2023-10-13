@@ -8,6 +8,9 @@ import bardapi
 
 api_key=st.secrets['API_KEY']
 
+nltk.download('punkt')
+nltk.download('stopwords')
+
 def extractinfo(uploaded_file):
     file = BytesIO(uploaded_file.read())
     reader = PyPDF2.PdfReader(file)
