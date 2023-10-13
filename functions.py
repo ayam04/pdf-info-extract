@@ -10,6 +10,7 @@ api_key=st.secrets['API_KEY']
 
 nltk.download('punkt')
 nltk.download('stopwords')
+nltk.download('wordnet')
 
 def extractinfo(uploaded_file):
     file = BytesIO(uploaded_file.read())
